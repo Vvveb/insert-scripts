@@ -30,7 +30,7 @@ Thumb: insert-scripts.svg
 Author: givanz
 Version: 0.1
 Author url: https://www.vvveb.com
-Settings: /admin/?module=plugins/insert-scripts/settings
+Settings: /admin/index.php?module=plugins/insert-scripts/settings
 */
 
 use function Vvveb\__;
@@ -48,12 +48,12 @@ class InsertScriptsPlugin {
 		Event::on('Vvveb\Controller\Base', 'init-menu', __CLASS__, function ($menu) use ($admin_path) {
 			$menu['plugins']['items']['insert-scripts'] = [
 				'name'     => __('Insert scripts'),
-				'url'      => $admin_path . '?module=plugins/insert-scripts/settings',
+				'url'      => $admin_path . 'index.php?module=plugins/insert-scripts/settings',
 				'icon-img' => PUBLIC_PATH . 'plugins/insert-scripts/insert-scripts.svg',
 			];
 
 			return [$menu];
-		}, 20);
+		});
 	}
 
 	function app() {
