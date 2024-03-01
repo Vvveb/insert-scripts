@@ -64,7 +64,7 @@ class InsertScriptsPlugin {
 		$view                            = View::getInstance();
 		$template                        = $view->getTemplateEngineInstance();
 		$view->plugins                   = $view->plugins ?? [];
-		$options                         = Vvveb\get_setting('insert-scripts', ['header', 'footer']);
+		$options                         = Vvveb\getSetting('insert-scripts', ['header', 'footer']);
 		$view->plugins['insert-scripts'] = $options ?? [];
 		$template->loadTemplateFile(__DIR__ . '/app/template/common.tpl');
 		//$template->addTemplatePath(__DIR__ .  '/../app/template/');

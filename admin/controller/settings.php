@@ -35,7 +35,7 @@ class Settings extends Base {
 		if ($settings /*&&
 			($errors = $validator->validate($settings)) === true*/) {
 			//$settings              = $validator->filter($settings);
-			$results               = \Vvveb\set_settings('insert-scripts', $settings, $this->global['site_id']);
+			$results               = \Vvveb\setMultiSetting('insert-scripts', $settings, $this->global['site_id']);
 			$this->view->success[] = __('Settings saved!');
 		} else {
 			$this->view->errors = $errors;
